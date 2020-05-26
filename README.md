@@ -1,5 +1,11 @@
-R Interface to ‘nomnoml’
-================
+
+# nomnoml <img src='man/figures/logo.svg' align="right" height="139" />
+
+[![Travis](https://travis-ci.org/rstudio/travis.svg?branch=master)](https://travis-ci.org/rstudio/nomnoml)
+[![AppVeyor build
+status](https://ci.appveyor.com/api/projects/status/56dd82589vji7saw?svg=true)](https://ci.appveyor.com/project/rstudio/nomnoml)
+[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/nomnoml)](https://cran.r-project.org/package=nomnoml)
+<a href="https://www.r-pkg.org/pkg/nomnoml"><img src="https://cranlogs.r-pkg.org/badges/nomnoml?color=brightgreen" style=""></a>
 
 **nomnoml** provides an R interface to
 [nomnoml](http://www.nomnoml.com/), a tool for drawing sassy UML
@@ -10,14 +16,14 @@ diagrams based on syntax with customizable styling.
 Install from CRAN:
 
 ``` r
-install.packages("nomonoml")
+install.packages("nomnoml")
 ```
 
 Or from GitHub using:
 
 ``` r
 install.packages("remotes")
-remotes::install_github("javierluraschi/nomnoml")
+remotes::install_github("rstudio/nomnoml")
 ```
 
 ## Getting Started
@@ -29,6 +35,12 @@ nomnoml::nomnoml("[Hello]-[World!]")
 ```
 
 ![](tools/readme/nomnoml-simple-1.png)<!-- -->
+
+To make the diagram flow vertically, the default at
+[nomnoml.com](http://www.nomnoml.com/), add the
+[direction](https://github.com/rstudio/nomnoml/issues/5) directive:
+
+![](tools/readme/nomnoml-vertical-2.png)<!-- -->
 
 You can also use `nomnoml` in R Markdown:
 
@@ -51,7 +63,35 @@ library(nomnoml)
 ```
 ````
 
-![](tools/readme/nomnoml-multiline-2.png)<!-- -->
+![](tools/readme/nomnoml-multiline-3.png)<!-- -->
+
+### SVG
+
+To render using SVG, add `svg = TRUE`
+
+``` r
+diagram <- "
+[A]-[B]
+[B]-[<box>C]
+"
+
+nomnoml(diagram, svg = TRUE)
+```
+
+To render a `nomnoml` chunk in R Markdown, add `svg=TRUE` to the chunk
+options
+
+```` markdown
+```{nomnoml, svg=TRUE}
+#stroke: orange
+#.box: fill=#8f8 dashed visual=ellipse
+
+[A]-[B]
+[B]-[<box>C]
+```
+````
+
+![](tools/readme/nomnoml-svg-1.png)<!-- -->
 
 ### Advanced
 
@@ -71,7 +111,7 @@ classifier styles.
 ]
 ```
 
-![](tools/readme/nomnoml-decorator-3.png)<!-- -->
+![](tools/readme/nomnoml-decorator-2.png)<!-- -->
 
 ### Association types
 
@@ -178,5 +218,5 @@ Available modifiers are
 
 ## Contributing
 
-Please reffer to
+Please refer to
 [github.com/skanaar/nomnoml](https://github.com/skanaar/nomnoml).

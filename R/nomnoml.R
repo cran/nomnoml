@@ -7,6 +7,8 @@
 #' @param png Optional file name to export diagram as 'png'.
 #' @param width Optional width in pixels for the exported 'png'.
 #' @param height Optional height in pixels for the exported 'png'.
+#' @param svg Use 'svg' output instead of 'png'? Notice that rendering in
+#'   'svg' is not at a par with 'png' and renders incorrectly at times.
 #' @param ... Additional parameters.
 #' 
 #' @details
@@ -234,17 +236,19 @@ nomnoml <- function(
   png = NULL,
   width = NULL,
   height = NULL,
+  svg = FALSE,
   ...) {
-
+  
   # forward options using x
   x <- list(
     code = paste(
       nomnoml_defaults(),
-      code
+      code,
+      sep = "\n"
     ),
-    svg = FALSE
+    svg = svg
   )
-
+  
   # create widget
   widget <- htmlwidgets::createWidget(
     name = 'nomnoml',
@@ -294,10 +298,10 @@ renderNomnoml <- function(expr, env = parent.frame(), quoted = FALSE) {
 }
 
 nomnoml_defaults <- function() {
-  "
-  #fill: #FEFEFF
-  #lineWidth: 1
-  #zoom: 4
-  #direction: right
-  "
+"
+#fill: #FEFEFF
+#lineWidth: 1
+#zoom: 4
+#direction: right
+"
 }

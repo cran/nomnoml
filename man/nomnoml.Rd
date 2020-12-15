@@ -2,10 +2,16 @@
 % Please edit documentation in R/nomnoml.R
 \name{nomnoml}
 \alias{nomnoml}
-\title{Render Diagram}
+\title{Render nomnoml diagram.}
 \usage{
-nomnoml(code = "[Hello]-[World!]", png = NULL, width = NULL,
-  height = NULL, svg = FALSE, ...)
+nomnoml(
+  code = "[Hello]-[World!]",
+  png = NULL,
+  width = NULL,
+  height = NULL,
+  svg = FALSE,
+  ...
+)
 }
 \arguments{
 \item{code}{The nomnoml diagram code.}
@@ -22,6 +28,8 @@ nomnoml(code = "[Hello]-[World!]", png = NULL, width = NULL,
 \item{...}{Additional parameters.}
 }
 \description{
+\ifelse{html}{\out{<a href='https://www.tidyverse.org/lifecycle/#experimental'><img src='figures/lifecycle-experimental.svg' alt='Experimental lifecycle'></a>}}{\strong{Experimental}}
+
 Renders a 'nomnoml' diagram as an 'htmlwidget' or saves it
 as a 'png' image.
 }
@@ -29,11 +37,11 @@ as a 'png' image.
 The 'nomnoml' syntax is simple and intuitive, a "Hello World"
 example can be rendered as an 'htmlwidget' as follows:
 
-\code{nomnoml::nomnoml("[Hello]-[World!]", "orange")}
+\code{nomnoml::nomnoml("[Hello]-[World!]")}
 
 You can also render as a 'png' file with specific dimensions:
 
-\code{nomnoml::nomnoml("[Hello]-[World!]", "hello.png", 600, 100)}
+\code{nomnoml::nomnoml("[Hello]-[World!]", png = "hello.png", 600, 100)}
 
 Still, complex diagrams can be defined by combining multiple
 association types, classifier types, directives and
@@ -42,196 +50,11 @@ custom classifier styles.
 You can also use of the \code{nomnoml} 'knitr' chunk
 to render inline diagrams in R Markdown documents.
 }
-\section{Association Types}{
+\section{Syntax}{
 
 
-\code{association -}
-
-\code{association ->}
-
-\code{association <->}
-
-\code{dependency -->}
-
-\code{dependency <-->}
-
-\code{generalization -:>}
-
-\code{generalization <:-}
-
-\code{implementation --:>}
-
-\code{implementation <:--}
-
-\code{composition +-}
-
-\code{composition +->}
-
-\code{aggregation o-}
-
-\code{aggregation o->}
-
-\code{note --}
-
-\code{hidden -/-}
-}
-
-\section{Classifier Types}{
-
-
-\code{[name]}
-
-\code{[<abstract> name]}
-
-\code{[<instance> name]}
-
-\code{[<note> name]}
-
-\code{[<reference> name]}
-
-\code{[<package> name]}
-
-\code{[<frame> name]}
-
-\code{[<database> name]}
-
-\code{[<start> name]}
-
-\code{[<end> name]}
-
-\code{[<state> name]}
-
-\code{[<choice> name]}
-
-\code{[<input> name]}
-
-\code{[<sender> name]}
-
-\code{[<receiver> name]}
-
-\code{[<transceiver> name]}
-
-\code{[<actor> name]}
-
-\code{[<usecase> name]}
-
-\code{[<label> name]}
-
-\code{[<hidden> name]}
-}
-
-\section{Directives}{
-
-
-\code{#arrowSize: 1}
-
-\code{#bendSize: 0.3}
-
-\code{#direction: down | right}
-
-\code{#gutter: 5}
-
-\code{#edgeMargin: 0}
-
-\code{#edges: hard | rounded}
-
-\code{#fill: #eee8d5; #fdf6e3}
-
-\code{#fillArrows: false}
-
-\code{#font: Calibri}
-
-\code{#fontSize: 12}
-
-\code{#leading: 1.25}
-
-\code{#lineWidth: 3}
-
-\code{#padding: 8}
-
-\code{#spacing: 40}
-
-\code{#stroke: #33322E}
-
-\code{#title: filename}
-
-\code{#zoom: 1}
-}
-
-\section{Custom Classifier Styles}{
-
-
-A directive that starts with \code{.} define a classifier style.
-The style is written as a space separated list of modifiers and
-key/value pairs.
-
-\code{#.box: fill=#8f8 dashed}
-
-\code{#.blob: visual=ellipse}
-
-\code{[<box> GreenBox]}
-
-\code{[<blob> HideousBlob]}
-
-Available key/value pairs are:
-
-\code{fill=(any css color)}
-
-\code{stroke=(any css color)}
-
-\code{align=center}
-
-\code{align=left}
-
-\code{direction=right}
-
-\code{direction=down}
-
-\code{visual=actor}
-
-\code{visual=class}
-
-\code{visual=database}
-
-\code{visual=ellipse}
-
-\code{visual=end}
-
-\code{visual=frame}
-
-\code{visual=hidden}
-
-\code{visual=input}
-
-\code{visual=none}
-
-\code{visual=note}
-
-\code{visual=package}
-
-\code{visual=receiver}
-
-\code{visual=rhomb}
-
-\code{visual=roundrect}
-
-\code{visual=sender}
-
-\code{visual=start}
-
-\code{visual=transceiver}
-
-Available modifiers are:
-
-\code{bold}
-
-\code{underline}
-
-\code{italic}
-
-\code{dashed}
-
-\code{empty}
+For a summary of available \code{nomnoml} syntax, including association types,
+directives and customer classifier styles, see \link{nomnoml_syntax}
 }
 
 \examples{
@@ -250,4 +73,7 @@ nomnoml::nomnoml("
     [Component] <:- [ConcreteComponent]
   ]")
 
+}
+\seealso{
+\code{\link[=nomnomlOutput]{nomnomlOutput()}}, \code{\link[=renderNomnoml]{renderNomnoml()}}, \code{\link[=nomnoml_validate]{nomnoml_validate()}}
 }

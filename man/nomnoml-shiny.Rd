@@ -4,7 +4,7 @@
 \alias{nomnoml-shiny}
 \alias{nomnomlOutput}
 \alias{renderNomnoml}
-\title{Shiny bindings for nomnoml}
+\title{Shiny bindings for nomnoml.}
 \usage{
 nomnomlOutput(outputId, width = "100\%", height = "400px")
 
@@ -25,6 +25,11 @@ string and have \code{'px'} appended.}
 is useful if you want to save an expression in a variable.}
 }
 \description{
+\ifelse{html}{\out{<a href='https://www.tidyverse.org/lifecycle/#experimental'><img src='figures/lifecycle-experimental.svg' alt='Experimental lifecycle'></a>}}{\strong{Experimental}}
+
 Output and render functions for using nomnoml within Shiny
 applications and interactive Rmd documents.
+}
+\seealso{
+\code{\link[=nomnoml]{nomnoml()}}
 }

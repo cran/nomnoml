@@ -1,3 +1,8 @@
+# nomnoml 0.2.4
+
+- Update `nomnoml.js` to version 1.4.0
+
+
 # nomnoml 0.2.3 (2020-12-14)
 
 - Fix CRAN check failures, specifically relaxing the requirement for phantomjs.

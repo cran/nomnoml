@@ -1,0 +1,31 @@
+---
+title: "Example"
+author: "For Instance"
+date: '`r format(Sys.Date(), format = "%d. %B %Y")`'
+output:
+  xaringan::moon_reader:
+  lib_dir: lib
+seal: true
+nature:
+  ratio: "16:9"
+---
+
+nomnoml chunk
+
+```{r}
+library(nomnoml)
+```
+
+
+  
+```{nomnoml, svg=TRUE}
+[Hello]-[World]
+```
+
+---
+
+r chunk
+
+```{r}
+nomnoml::nomnoml("[Hello]-[World]", svg = TRUE)
+```

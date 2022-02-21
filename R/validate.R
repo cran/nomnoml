@@ -22,6 +22,7 @@
 #' \dontrun{
 #' if (requireNamespace("V8", quietly = TRUE)) nomnoml_validate("[hello] -> [world]")
 #' }
+#' 
 nomnoml_validate <- function(diagram = "[test]") {
   
   if (!requireNamespace("V8", quietly = TRUE)) {stop("Install the V8 package to validate nomnoml code")}

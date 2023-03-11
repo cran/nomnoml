@@ -1,7 +1,7 @@
 ---
-title: "Example"
-author: "For Instance"
-date: '`r format(Sys.Date(), format = "%d. %B %Y")`'
+title: "Using 'nomnoml' in 'xaringan'"
+author: "Andrie de Vries"
+date: '`r format(Sys.Date(), format = "%d %B %Y")`'
 output:
   xaringan::moon_reader:
   lib_dir: lib
@@ -10,7 +10,7 @@ nature:
   ratio: "16:9"
 ---
 
-nomnoml chunk
+## Using a nomnoml chunk
 
 ```{r}
 library(nomnoml)
@@ -24,7 +24,7 @@ library(nomnoml)
 
 ---
 
-r chunk
+## Using an R chunk
 
 ```{r}
 nomnoml::nomnoml("[Hello]-[World]", svg = TRUE)

@@ -1,6 +1,9 @@
 # nomnoml (development version)
 
 
+# nomnoml 0.2.7
+
+- Remove use of `numeric_version()` to comply with changes in R devel.
 
 # nomnoml 0.2.6
 

@@ -31,15 +31,14 @@ install.packages("remotes")
 remotes::install_github("rstudio/nomnoml")
 ```
 
-To use `nomnoml` in an R Markdown document, you also need to make sure
-the external dependency on PhantomJS is available. You may either
-download PhantomJS from its website, or use the function
-`webshot::install_phantomjs()` to install it automatically.
+**You need a chromium based browser installed on your system**
 
-``` r
-install.packages("webshot")
-webshot::install_phantomjs()
-```
+In previous releases of `nomnoml` (prior to v0.3.0) we used the
+`phantom.js` headless browser to capture screenshots. In version 0.3.0
+we switched to using `webshot2`.
+
+This means you need a chromium-based browser, e.g. Chromium itself,
+Chrome, Edge, Vivaldi, Brave, or Opera.
 
 ## Getting Started
 
@@ -78,8 +77,7 @@ library(nomnoml)
 #stroke: orange
 #.box: fill=#8f8 dashed visual=ellipse
 
-[A]-[B]
-[B]-[<box>C]
+[A]-[B]-[<box>C]
 ```
 ````
 
@@ -101,8 +99,7 @@ options
 #stroke: orange
 #.box: fill=#8f8 dashed visual=ellipse
 
-[A]-[B]
-[B]-[<box>C]
+[A]-[B]-[<box>C]
 ```
 ````
 
@@ -128,6 +125,8 @@ classifier styles.
 ```
 
 ![](man/figures/readme/nomnoml-decorator-2.png)<!-- -->
+
+## Nomnoml documentation
 
 ### Association types
 

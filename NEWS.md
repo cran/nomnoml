@@ -1,4 +1,9 @@
-# nomnoml (development version)
+# nomnoml 0.3.0
+
+- This release can potentially cause breaking changes, because of a switch to use `webshot2`. You now need a chromium based browser.
+- Update `nomnoml.js` to v1.6.2
+- Update from `webshot` to `webshot2`, thus removing the dependency on `phantomjs`
+
 
 
 # nomnoml 0.2.7
